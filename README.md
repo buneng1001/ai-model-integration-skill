@@ -15,3 +15,13 @@ Skill 显示名称：**AI 模型接入**
 - 项目适配器、调用示例和测试生成
 
 使用前请阅读 [SKILL.md](SKILL.md)。真实 API Key 只应保存在本机配置中。
+
+## 本地 API Key
+
+本仓库的本地 Key 文件位置是：
+
+```text
+D:\0_Project\AI_project\codex_talk\skills\ai-model-integration-skill\.env.local
+```
+
+可以参考 `.env.example` 创建该文件。`.env.local` 已被 `.gitignore` 排除，不会提交到 GitHub。
