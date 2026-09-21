@@ -2,8 +2,9 @@
 name: ai-model-integration-skill
 description: >-
   Connect AI model providers to a project with consistent provider configuration, local API key handling,
-  remembered model history, model discovery, connection tests, and reusable adapter code. Use when a user asks
-  to integrate an AI/LLM provider into an application or wants the same integration pattern reused in another project.
+  remembered model history, model discovery, connection tests, reusable adapter code, and stable Web UI defaults.
+  Use when a user asks to integrate an AI/LLM provider into an application or wants the same integration pattern
+  reused in another project.
 ---
 
 # AI 模型接入
@@ -17,6 +18,7 @@ description: >-
 - 默认 Key 从项目约定的本地配置读取；禁止写入源码、日志、报告、测试快照或提交记录。
 - 临时 Key 默认只保存在当前进程或页面内存。用户明确勾选“记住临时 API Key”时，才写入本地 `.env.local` 或项目已采用的本地凭据文件，并确保该文件被 `.gitignore` 忽略。
 - 真正发起连接测试前，说明会产生外部请求，用户已明确要求测试时才执行。
+- 当目标是 Web 项目时，默认应用前端规范：服务商和模型选择、模型获取/刷新、Key 来源、临时 Key、连接测试、明确状态反馈、主题适配和响应式布局；用户不需要在每次请求中重复列出这些功能。
 
 ## 标准流程
 
@@ -36,7 +38,7 @@ description: >-
 11. 按项目语言生成最小适配器、配置示例、调用示例和测试；保留 Mock 或离线 seam，避免外部模型成为项目关键路径，除非用户明确要求。
 12. 完成后检查 `.gitignore`、Git diff 和敏感信息扫描，再报告修改文件、已验证模型和仍需人工确认的服务商。
 
-当任务包含 Web UI、设置页、模型选择页、连接测试页或用户要求 Material 3 / Material 3 Expressive 时，读取 [frontend-ui-guidelines.md](references/frontend-ui-guidelines.md)。该参考文件约束页面结构、状态、组件和验收方式；颜色、尺寸和具体文案仍应根据当前项目调整。
+当任务包含 Web UI、设置页、模型选择页、连接测试页，或用户要求接入 AI 的目标是 Web 项目时，读取 [frontend-ui-guidelines.md](references/frontend-ui-guidelines.md)。该参考文件默认约束页面结构、状态、组件和验收方式；颜色、尺寸和具体文案仍应根据当前项目调整。只有用户明确删减范围时，才减少这些默认功能。
 
 ## 错误返回要求
 
