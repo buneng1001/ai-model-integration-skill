@@ -1,7 +1,7 @@
 interface:
   display_name: "AI 模型接入"
   short_description: "统一接入多家 AI 服务商和可用模型"
-  default_prompt: "使用 $ai-model-integration-skill 为当前项目配置 AI 服务商、API Key、模型发现、连接测试和统一适配代码。"
+  default_prompt: "使用 $ai-model-integration-skill 为当前项目配置 AI 服务商、API Key、模型发现、网络代理、连接测试和可复用适配代码；如需发送长源文件，采用分阶段和可恢复的工作流。"
 
 policy:
   allow_implicit_invocation: true
